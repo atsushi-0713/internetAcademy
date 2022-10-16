@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>テキストノード</title>
+</head>
+<body>
+<h1>テキストノードの取得</h1>
+
+<p id="p1">p要素です</p>
+<p id="div1">div要素です</p>
+
+<input type="button" value="実行" onclick="getText()">
+
+<script>
+function getText(){
+  var p1 = document.getElementById("p1");
+  console.log(p1); //取得した<p>要素
+
+  console.log("テキストノードの内容の取得");
+  console.log(p1.childNodes[0].data); //結果：子ノード(テキストノード)
+  console.log(p1.firstChild.data); //結果：子ノード(テキストノード)
+}
+</script>
+</body>
+</html>

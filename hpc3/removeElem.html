@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript練習</title>
+</head>
+
+<body>
+<h1>要素の削除</h1>
+<input type="button" value="削除" onclick="tagDelete()">
+<div id="parent">
+  <p>１つめのp要素です</p>
+  <p>２つめのp要素です</p>
+  <p>３つめのp要素です</p>
+  <p>４つめのp要素です</p>
+  <p>５つめのp要素です</p>
+</div>
+
+<script>
+function tagDelete(){
+  //要素の消去
+  var elemParent = document.getElementById("parent");
+  console.log(elemParent.childNodes);
+  var elemChild1 = elemParent.firstChild;
+  elemParent.removeChild(elemChild1);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>文字数カウント</title>
+<style>
+span{
+  font-size: 130%;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+  <h1>文字数カウント</h1>
+
+  <p>上限20文字</p>
+  <p>現在<span id="nowNum">0</span>文字</p>
+  <p>あと<span id="remainNum">20</span>文字</p>
+
+  <div><textarea id="text" rows="10" cols="60" onkeyup="textCount()"></textarea></div>
+
+  <script>
+    var maxNum = 20;  //最大文字数
+    var inputNum = 0;  //現在の入力文字数
+    var remainNum = maxNum;  //現在の残り文字数
+    var inputVal = "";  //入力された文字列
+
+    function textCount() {
+      inputVal = document.getElementById("text").value;
+      console.log(inputVal);//入力された文字列
+      inputNum = inputVal.length;
+      console.log(inputNum);//入力文字数
+
+      remainNum = maxNum - inputNum;
+      console.log(remainNum);//残り文字数
+
+      document.getElementById("nowNum").childNodes[0].data = inputNum;
+      document.getElementById("remainNum").childNodes[0].data = remainNum;
+    }
+  </script>
+</body>
+</html>

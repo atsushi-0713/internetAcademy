@@ -1,0 +1,66 @@
+■要素名で要素ノードを取得
+
+//1つめのp要素に対して、背景色を水色に変更する
+document.getElementsByTagName("p")[0].style.backgroundColor="aqua";
+
+
+■id名で要素ノードを取得
+
+//id名がcolor1の要素に対して、背景色を水色に変更
+document.getElementById("color1").style.backgroundColor="aqua";
+
+
+■class名で要素ノードを取得
+
+//class名がcolor2の要素(1つ目)に対して、背景色をピンク色に変更
+document.getElementsByClassName("color2")[0].style.backgroundColor="pink";
+
+//classがcolor2のすべての要素に対して、背景色をピンク色に変更
+var classColor2 = document.getElementsByClassName("color2");
+for(var i = 0; i<classColor2.length; i++){
+  classColor2[i].style.backgroundColor="pink";
+}
+
+
+■CSSセレクターで要素ノードを取得
+
+//id名がcolor1の要素に対して、文字サイズを30pxに変更
+document.querySelectorAll("#color1")[0].style.fontSize="30px";
+
+
+■相対的な位置で要素ノードを取得(ノードウォーキング)
+
+//親ノード
+document.getElementById("color1").parentNode.style.backgroundColor="aqua";
+
+//子ノード
+document.getElementsByTagName("body")[0].childNodes[1].style.backgroundColor="aqua";
+
+//兄弟ノード
+document.getElementById("color1").previousSibling.style.backgroundColor="aqua";//1つ後のノード
+document.getElementById("color1").nextSibling.style.backgroundColor="pink";//1つ前のノード
+
+
+■要素ノードの削除
+
+var elemParent = document.getElementById("parent");//親ノードの取得
+var elemChild1 = elemParent.firstChild;//子ノードの取得
+elemParent.removeChild(elemChild1);//削除
+
+
+■要素ノードの追加１(appendChild)
+
+var elemParent = document.getElementById("parent");
+var div1 = document.createElement('div');
+div1.textContent = 'appendChildで追加したdiv要素';
+elemParent.appendChild(div1);
+
+
+■要素ノードの追加２(insertBefore)
+
+var elemParent = document.getElementById("parent");
+var div2 = document.createElement('div');
+div2.textContent = 'insertBeforeで追加したdiv要素';
+var elemChild = document.getElementById("child");
+elemParent.insertBefore(div2, elemChild);
+

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript練習</title>
+</head>
+
+<body>
+  <h1>タグの表示・非表示その２</h1>
+
+  <input type="button" value="表示の切り替え" onclick="showHide()">
+
+  <p>１つめのpタグです</p>
+  <p>２つめのpタグです</p>
+  <p>３つめのpタグです</p>
+
+  <div>１つめのdivタグです</div>
+  <div>２つめのdivタグです</div>
+  <div>３つめのdivタグです</div>
+
+<script>
+var status = 1;
+
+function showHide(){
+
+  //タグを非表示にする
+  if(status == 1){
+  document.getElementsByTagName("p")[1].style.display="none";
+  status = 0;//非表示状態であるという印
+
+  //タグを表示にする
+  }else{
+  document.getElementsByTagName("p")[1].style.display="block";
+  status = 1;//表示状態であるという印
+  }
+}
+</script>
+</body>
+</html>

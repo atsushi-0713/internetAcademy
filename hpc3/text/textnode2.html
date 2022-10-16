@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>テキストノード</title>
+</head>
+<body>
+<h1>テキストノードの変更</h1>
+
+<p id="p1">pタグです</p>
+<div id="div1">divタグです</div>
+
+<input type="button" value="実行" onclick="changeText()">
+
+<script>
+function changeText(){
+  var p1 = document.getElementById("p1");
+  console.log(p1); //取得した<p>タグ
+  console.log(p1.firstChild.data); //結果：変更前のテキストノード
+
+  console.log("テキストノードの内容の変更");
+  p1.firstChild.data = "変更しました";
+  console.log(p1.firstChild.data); //結果：変更後のテキストノード
+}
+</script>
+</body>
+</html>
