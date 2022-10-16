@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>タイトル</title>
+<style>
+#mainImg{
+  width:800px;
+  height:auto;
+}
+ul{
+  padding:0;
+}
+li{
+  list-style-type: none;
+  float: left;
+}
+li img{
+  width:200px;
+  height:auto;
+}
+</style>
+</head>
+<body>
+  <h1>クリックすると大きな画像が変わる(完成版)</h1>
+
+  <div><img src="images/img1.jpg" alt="ケーキ" id="mainImg"></div>
+  <ul>
+    <li><img src="images/img1.jpg" onclick="imgChange('img1.jpg')"></li>
+    <li><img src="images/img2.jpg" onclick="imgChange('img2.jpg')"></li>
+    <li><img src="images/img3.jpg" onclick="imgChange('img3.jpg')"></li>
+    <li><img src="images/img4.jpg" onclick="imgChange('img4.jpg')"></li>
+  </ul>
+
+<script>
+  function imgChange(imgName){
+    var imgPath = "images/" + imgName;
+    document.getElementById("mainImg").setAttribute("src", imgPath);
+  }
+</script>
+</body>
+</html>

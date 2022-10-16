@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>JavaScript練習</title>
+</head>
+
+<body>
+  <h1>フォームの入力チェック</h1>
+
+  <p>JavaScriptでチェック(4文字以上で送信可能)</p>
+  <form action="#">
+    <input type="text" name="sample" value="" id="text" onkeyup="validate()">
+    <input type="submit" name="submit" id="submit" value="送信" disabled>
+  </form>
+
+<script>
+function validate(){
+  var inputText = document.getElementById("text").value;
+  var inputNum = inputText.length;
+  if(inputNum < 4 ){
+    document.getElementById("text").style.backgroundColor = "orangered";
+    document.getElementById("submit").disabled = true;
+  }else{
+    document.getElementById("text").style.backgroundColor = "lightgreen";
+    document.getElementById("submit").disabled = false;
+  }
+  return false;
+}
+</script>
+</body>
+</html>

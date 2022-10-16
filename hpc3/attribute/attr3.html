@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript練習</title>
+<style>
+.red{
+  background-color:red;
+}
+</style>
+</head>
+
+<body>
+  <h1>属性ノードの削除</h1>
+  <p id="text" class="red">class名からスタイルが適用されているp要素です</p>
+  <input type="button" value="実行" onclick="removeRed()">
+
+<script>
+function removeRed(){
+  document.getElementById("text").removeAttribute("class");
+}
+</script>
+</body>
+</html>

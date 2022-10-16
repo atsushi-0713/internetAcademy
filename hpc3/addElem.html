@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript練習</title>
+</head>
+
+<body>
+<h1>要素の追加</h1>
+<input type="button" value="追加" onclick="tagAdd()">
+
+<div id="parent">
+  <p id="child">１つめのp要素です</p>
+</div>
+
+<script>
+function tagAdd(){
+  var elemParent = document.getElementById("parent");
+
+  //appendChild
+  var div1 = document.createElement('div');
+  div1.textContent = 'appendChildで追加したdiv要素';
+  elemParent.appendChild(div1);
+
+  //insertBefore
+  var div2 = document.createElement('div');
+  div2.textContent = 'insertBeforeで追加したdiv要素';
+  var elemChild = document.getElementById("child");
+  elemParent.insertBefore(div2, elemChild);
+}
+</script>
+</body>
+</html>
